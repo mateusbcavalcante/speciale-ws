@@ -9,8 +9,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.a2dm.brcmn.entity.ativmob.Event;
 import br.com.a2dm.spdm.ativmob.service.AtivMobService;
+import br.com.a2dm.spdm.entity.Event;
 import br.com.a2dm.spdm.exception.ApiException;
 import br.com.a2dm.spdm.exception.ExceptionUtils;
 
