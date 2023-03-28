@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.com.a2dm.spdm.ativmob.service.AtivMobService;
-import br.com.a2dm.spdm.entity.Event;
+import br.com.a2dm.spdm.entity.SugestaoPedido;
 import br.com.a2dm.spdm.exception.ApiException;
 import br.com.a2dm.spdm.exception.ExceptionUtils;
 
@@ -18,11 +18,11 @@ import br.com.a2dm.spdm.exception.ExceptionUtils;
 public class AtivMobWS {
 
     @POST
-    @Path("/events/{cnpj}")
+    @Path("/sugestoesPedido/{cnpj}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Event> proccessEvents(@PathParam("cnpj") BigInteger cnpj) throws ApiException {
+    public List<SugestaoPedido> proccessSugestoesPedido(@PathParam("cnpj") BigInteger cnpj) throws ApiException {
         try {
-            return AtivMobService.getInstance().proccessEvents(cnpj);
+            return AtivMobService.getInstance().proccessSugestoesPedido(cnpj);
         } catch (Exception e) {
             throw ExceptionUtils.handlerApiException(e);
         }
