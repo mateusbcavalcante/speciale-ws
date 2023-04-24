@@ -10,9 +10,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.com.a2dm.brcmn.dto.ProdutoDTO;
+import br.com.a2dm.brcmn.dto.ProdutoEstruturaDTO;
 import br.com.a2dm.spdm.entity.ClienteProduto;
 import br.com.a2dm.spdm.exception.ApiException;
 import br.com.a2dm.spdm.exception.ExceptionUtils;
+import br.com.a2dm.spdm.omie.service.OmieProdutoEstruturaService;
 import br.com.a2dm.spdm.omie.service.OmieProdutoService;
 import br.com.a2dm.spdm.service.ClienteProdutoService;
 
@@ -79,6 +81,18 @@ public class ProdutosWS {
 //			}
 //			return listaProdutoCliente;
 			return OmieProdutoService.getInstance().listarProdutosPorCliente(idCliente);
+		} catch (Exception e) {
+			throw ExceptionUtils.handlerApiException(e);
+		}
+	}
+	
+	@GET
+	@Path("/estrutura/{idProduto}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ProdutoEstruturaDTO getProdutoEstrutura(@PathParam("idProduto") BigInteger idProduto) throws ApiException {
+		try {
+			ProdutoEstruturaDTO response = OmieProdutoEstruturaService.getInstance().obterProdutoEstrutura(idProduto);
+			return response;
 		} catch (Exception e) {
 			throw ExceptionUtils.handlerApiException(e);
 		}
