@@ -31,7 +31,7 @@ public class AtivMobWS {
     }
     
     @POST
-    @Path("/cadastrar-evento}")
+    @Path("/cadastrar-evento")
     @Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
     public SugestaoPedido cadastrarEvento(EventDTO event) throws ApiException {
