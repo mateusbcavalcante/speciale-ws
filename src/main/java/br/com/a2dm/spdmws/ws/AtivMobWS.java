@@ -10,7 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.a2dm.brcmn.dto.ativmob.EventDTO;
+import br.com.a2dm.brcmn.dto.ativmob.EventRequestDTO;
 import br.com.a2dm.spdm.ativmob.service.AtivMobService;
 import br.com.a2dm.spdm.entity.SugestaoPedido;
 import br.com.a2dm.spdm.exception.ApiException;
@@ -34,9 +34,9 @@ public class AtivMobWS {
     @Path("/cadastrar-evento")
     @Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-    public SugestaoPedido cadastrarEvento(EventDTO event) throws ApiException {
+    public List<SugestaoPedido> cadastrarEvento(EventRequestDTO eventRequestDTO) throws ApiException {
         try {
-            return AtivMobService.getInstance().saveSugestaoPedido(event);
+            return AtivMobService.getInstance().processarSugestaoPedidoRequest(eventRequestDTO);
         } catch (Exception e) {
             throw ExceptionUtils.handlerApiException(e);
         }
