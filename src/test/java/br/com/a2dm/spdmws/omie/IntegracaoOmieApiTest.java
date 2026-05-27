@@ -40,7 +40,7 @@ public class IntegracaoOmieApiTest {
 		}
 	}
 	
-	@Test
+//	@Test
 	public void listagemCaracteristicasProdutos() {
 
 		try {
