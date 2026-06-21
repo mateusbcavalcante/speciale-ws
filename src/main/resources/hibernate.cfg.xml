@@ -10,7 +10,7 @@
         <property name="hibernate.connection.username">ped</property>
         <property name="hibernate.connection.password">Socio2016</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        
+
         <!-- C3P0 Configuration -->
         <property name="hibernate.c3p0.acquire_increment">5</property>
         <property name="hibernate.c3p0.max_size">200</property>
@@ -62,6 +62,9 @@
 		<mapping class="br.com.a2dm.spdm.entity.Tipo"/>
 		<mapping class="br.com.a2dm.spdm.entity.Feriado"/>
 		<mapping class="br.com.a2dm.spdm.entity.NaoConformidade"/>
+		<mapping class="br.com.a2dm.spdm.entity.TabelaPreco"/>
+		<mapping class="br.com.a2dm.spdm.entity.TabelaPrecoItem"/>
+		<mapping class="br.com.a2dm.spdm.entity.WebhookLog"/>
 		
 	</session-factory>
 </hibernate-configuration>
